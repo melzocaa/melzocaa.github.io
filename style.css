@@ -1,35 +1,199 @@
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(135deg, #3f87a6, #ebf8e1, #f69d3c);
-      font-family: Arial, sans-serif;
-      animation: backgroundShift 10s infinite alternate;
-    }
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-    h1 {
-      font-size: 4rem;
-      color: white;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-      animation: float 3s ease-in-out infinite;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-20px);
-      }
-    }
+body {
+  font-family: 'poppins';
+  background-color: #0f0f14;
+  color: #f1f1f1;
+  line-height: 1.6;
+}
 
-    @keyframes backgroundShift {
-      0% {
-        background-position: 0% 50%;
-      }
-      100% {
-        background-position: 100% 50%;
-      }
-    }
+/* HERO */
+.hero {
+  min-height: 60vh;
+  background: linear-gradient(135deg, #2c2c2c, #0d0d0f);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.hero h1 span {
+  color: #f472b6; /* rosa */
+}
+
+.hero p {
+  color: #b8b8c1;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.btn {
+  background-color: #f472b6;
+  color: #0f0f14;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  opacity: 0.9;
+}
+
+/* SEÇÕES */
+section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 4rem 2rem;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* SOBRE */
+.sobre p {
+  max-width: 800px;
+  color: #c7c7d1;
+}
+
+/* PROJETOS */
+.grid-projetos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: #1a1a23;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #2a2a35;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-content {
+  padding: 1.5rem;
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+  color: #f472b6;
+}
+
+.card p {
+  color: #b8b8c1;
+  font-size: 0.95rem;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(244, 114, 182, 0.18);
+}
+
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid #2a2a35;
+}
+
+.footer p {
+  margin-bottom: 1rem;
+  color: #9ca3af;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social a {
+  padding: 0.5rem 1.2rem;
+  border: 1px solid #f472b6;
+  border-radius: 20px;
+  color: #f472b6;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.social a:hover {
+  background-color: #f472b6;
+  color: #0f0f14;
+  transform: translateY(-2px);
+}
+
+.card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.card-link:focus-visible .card {
+  outline: 2px solid #f472b6;
+  outline-offset: 4px;
+}
+
+.sobre-container {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.foto-perfil {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #f472b6;
+}
+
+.sobre-texto {
+  max-width: 600px;
+}
+
+.sobre-texto p {
+  color: #c7c7d1;
+}
+
+.link-whatsapp img{
+    width: 60px;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .sobre-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
